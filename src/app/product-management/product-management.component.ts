@@ -14,12 +14,14 @@ export class ProductManagementComponent implements OnInit {
   constructor(
     private productManagementService: ProductManagementService,
     private router: Router
-    ) {}
-    public getAllProducts = this.productManagementService.getAllProducts();
+    ) {
+      this.productManagementService.getAllProducts();
+    }
+    public getAllProducts = this.productManagementService.allProducts;
     @ViewChild(MatPaginator) paginator: MatPaginator | undefined;
     dataSource: any = [];
   ngOnInit(): void {
-    this.getAllProducts.pipe().subscribe((products) => {
+    this.getAllProducts.subscribe((products) => {
       this.dataSource = new MatTableDataSource<Product>(products);
       this.dataSource.paginator = this.paginator;
     })
@@ -29,12 +31,7 @@ this.router.navigate([`/product-management/edit/${id}`]);
 }
 delete(id: string) {
   this.productManagementService.deleteProduct(id).subscribe(()=> {
-    let index: number = this.dataSource.data.findIndex((product:Product) => product.id === id);
-
-    this.dataSource.data.splice(index,1)
-    this.dataSource = new MatTableDataSource<Element>(this.dataSource.data);
   });
-
 
 }
   displayedColumns: string[] = ['id', 'title', 'price', 'category', 'description', 'edit', 'delete'];
