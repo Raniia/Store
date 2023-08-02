@@ -1,0 +1,34 @@
+<div class="container col-md-6 offset-md-3 mt-5">
+  <div *ngIf="error" class="alert alert-danger">{{error}}</div>
+  <div class="card">
+      <h4 class="card-header">Login</h4>
+      <div class="card-body">
+          <form [formGroup]="form" (ngSubmit)="onSubmit()">
+              <div class="mb-3">
+                <mat-form-field class="w-100">
+                  <input matInput placeholder="Username" class="form-control" formControlName="username" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+                </mat-form-field>
+                  <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                      <div *ngIf="f.username.errors.required">Username is required</div>
+                  </div>
+              </div>
+              <div class="mb-3">
+                <mat-form-field class="w-100">
+                  <input type="password" matInput placeholder="Password" class="form-control" formControlName="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }"/>
+                </mat-form-field>
+                  <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                      <div *ngIf="f.password.errors.required">Password is required</div>
+                  </div>
+              </div>
+              <div>
+
+                  <button [disabled]="loading" class="w-100 btn btn-primary">
+                    <span  *ngIf="loading" ></span>
+                    Login
+                </button>
+
+              </div>
+          </form>
+      </div>
+  </div>
+</div>

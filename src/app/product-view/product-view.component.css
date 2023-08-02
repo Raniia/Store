@@ -1,0 +1,10 @@
+.mat-mdc-card {
+  background: rgb(138, 185, 141);
+  cursor: pointer;
+  border-radius: 10%;
+  height: 120%;
+}
+
+.mt-20 {
+  margin: 20px;
+}

@@ -1,0 +1,17 @@
+<div class="content" fxLayout="row wrap" fxLayoutGap="16px grid">
+  <ng-container *ngIf="getAllCategories | async  as categories">
+
+  <div class="mt-20"
+    *ngFor="let category of categories"
+  >
+    <mat-card (click)="onClickCategory(category)" class="mat-elevation-z4">
+      <mat-card-header>
+        <mat-card-title>{{category}}</mat-card-title>
+      </mat-card-header>
+    </mat-card>
+  </div>
+</ng-container>
+<ng-container *ngIf="getAllProductsByCategory | async  as products">
+<app-product-list [products] = "products"></app-product-list>
+</ng-container>
+</div>

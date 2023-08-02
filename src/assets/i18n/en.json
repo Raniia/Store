@@ -1,0 +1,12 @@
+{
+  "landingPage": {
+      "slogan": "Big or small, we move together",
+      "login": "Login",
+      "signUp": "sign up"
+  },
+  "loginPage": {
+      "slogan": "Big or small, we move together",
+      "login": "Login",
+      "signUp": "sign up"
+  }
+}
