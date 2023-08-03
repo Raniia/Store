@@ -33,6 +33,7 @@ export class LoginComponent implements OnInit {
     get f() { return this.form.controls; }
 
     onSubmit() {
+        debugger
         this.submitted = true;
         this.error = '';
         if (this.form.invalid) {
