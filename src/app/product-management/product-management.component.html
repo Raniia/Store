@@ -1,34 +1,38 @@
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+<div class=" mb-3 mt-40 icon-wrapper">
+    <mat-icon color="accent"  (click)="add()">add_circle</mat-icon>
+    </div>
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8 mt-40">
 
   <ng-container matColumnDef="id">
-    <th mat-header-cell *matHeaderCellDef> ID </th>
+    <th mat-header-cell *matHeaderCellDef> {{'productManagement.id' | translate}} </th>
     <td mat-cell *matCellDef="let element"> {{element.id}} </td>
   </ng-container>
 
   <ng-container matColumnDef="title">
-    <th mat-header-cell *matHeaderCellDef> Title </th>
+    <th mat-header-cell *matHeaderCellDef> {{'productManagement.title' | translate}} </th>
     <td mat-cell *matCellDef="let element"> {{element.title}} </td>
   </ng-container>
 
   <ng-container matColumnDef="category">
-    <th mat-header-cell *matHeaderCellDef> Category </th>
+    <th mat-header-cell *matHeaderCellDef> {{'productManagement.category' | translate}} </th>
     <td mat-cell *matCellDef="let element"> {{element.category}} </td>
   </ng-container>
   <ng-container matColumnDef="price">
-    <th mat-header-cell *matHeaderCellDef> Price </th>
+    <th mat-header-cell *matHeaderCellDef> {{'productManagement.price' | translate}} </th>
     <td mat-cell *matCellDef="let element"> {{element.price | currency}} </td>
   </ng-container>
 
   <ng-container matColumnDef="description">
-    <th mat-header-cell *matHeaderCellDef> Description </th>
+    <th mat-header-cell *matHeaderCellDef> {{'productManagement.description' | translate}} </th>
     <td mat-cell *matCellDef="let element"> {{element.description}} </td>
   </ng-container>
   <ng-container matColumnDef="edit">
-    <th mat-header-cell *matHeaderCellDef> Edit </th>
+    <th mat-header-cell *matHeaderCellDef> {{'productManagement.edit' | translate}} </th>
     <td class="actions" mat-cell *matCellDef="let element"  (click)="edit(element.id)"> <mat-icon>edit</mat-icon> </td>
   </ng-container>
   <ng-container matColumnDef="delete">
-    <th mat-header-cell *matHeaderCellDef> Delete </th>
+    <th mat-header-cell *matHeaderCellDef> {{'productManagement.delete' | translate}} </th>
     <td mat-cell  class="actions" *matCellDef="let element"  (click)="delete(element.id)"> <mat-icon>delete</mat-icon> </td>
   </ng-container>
 

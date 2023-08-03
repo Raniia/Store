@@ -1,7 +1,18 @@
 {
-  "landingPage": {
-      "slogan": "Grandes o pequeños, nos movemos juntos",
-      "login": "Iniciar Sesión",
-      "signUp": "Regístrate"
+  "login": {
+      "title": "تسجيل الدخول",
+      "usernameRequired": "اسم المستخدم مطلوب",
+      "passwordRequired": "كلمة المرور مطلوبة",
+      "placeholderUsername": "اسم المستخدم",
+      "placeholderPassword": "كلمة المرور"
+  },
+  "productManagement": {
+    "id": "المعرف",
+    "title": "عنوان",
+    "category": "فئة",
+    "price": "سعر",
+    "description": "وصف",
+    "edit": "تغير",
+    "delete": "حذف"
   }
 }

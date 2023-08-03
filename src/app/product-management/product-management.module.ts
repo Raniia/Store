@@ -5,6 +5,7 @@ import { SharedModule } from '@app/shared/shared.module';
 import { ProductManagementRoutingModule } from './product-management-routing.module';
 import { EditProductComponent } from './edit-product/edit-product.component';
 import { AddProductComponent } from './add-product/add-product.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -14,6 +15,7 @@ import { AddProductComponent } from './add-product/add-product.component';
     CommonModule,
     SharedModule,
     ProductManagementRoutingModule,
+    ReactiveFormsModule
 
   ]
 })

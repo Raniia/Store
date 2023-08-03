@@ -11,7 +11,7 @@ const routes: Routes = [
         canActivate:[]
     },
     { path: 'edit/:id', component: EditProductComponent },
-    { path: 'add/', component: AddProductComponent },
+    { path: 'add', component: AddProductComponent },
   ];
 
 @NgModule({

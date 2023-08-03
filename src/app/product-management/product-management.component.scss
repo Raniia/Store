@@ -1,3 +1,15 @@
 .actions {
   cursor: pointer;
 }
+.mt-40 {
+  margin-top: 40px;
+}
+
+.icon-wrapper {
+  float: right;
+  margin: 30px;
+  mat-icon {
+    font-size: xxx-large;
+    overflow: visible;
+  }
+}

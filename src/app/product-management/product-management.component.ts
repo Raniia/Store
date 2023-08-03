@@ -10,30 +10,38 @@ import { Router } from '@angular/router';
   styleUrls: ['./product-management.component.scss'],
 })
 export class ProductManagementComponent implements OnInit {
-
   constructor(
     private productManagementService: ProductManagementService,
     private router: Router
-    ) {
-      this.productManagementService.getAllProducts();
-    }
-    public getAllProducts = this.productManagementService.allProducts;
-    @ViewChild(MatPaginator) paginator: MatPaginator | undefined;
-    dataSource: any = [];
+  ) {
+  }
+  public getAllProducts = this.productManagementService.allProducts;
+  @ViewChild(MatPaginator) paginator: MatPaginator | undefined;
+  dataSource: any = [];
   ngOnInit(): void {
     this.getAllProducts.subscribe((products) => {
       this.dataSource = new MatTableDataSource<Product>(products);
       this.dataSource.paginator = this.paginator;
-    })
+    });
   }
-  edit(id: string){
-this.router.navigate([`/product-management/edit/${id}`]);
-}
-delete(id: string) {
-  this.productManagementService.deleteProduct(id).subscribe(()=> {
-  });
+  edit(id: string) {
+    this.router.navigate([`/product-management/edit/${id}`]);
+  }
+  delete(id: string) {
+    debugger
+    this.productManagementService.deleteProduct(id).subscribe(() => {});
+  }
+  add() {
+    this.router.navigate([`/product-management/add`]);
 
+  }
+  displayedColumns: string[] = [
+    'id',
+    'title',
+    'price',
+    'category',
+    'description',
+    'edit',
+    'delete',
+  ];
 }
-  displayedColumns: string[] = ['id', 'title', 'price', 'category', 'description', 'edit', 'delete'];
-}
-

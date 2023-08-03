@@ -1,1 +1,50 @@
-<p>add-product works!</p>
+<div class="container col-md-6 offset-md-3 mt-5">
+    <div *ngIf="error" class="alert alert-danger">{{error}}</div>
+    <div class="card">
+        <h4 class="card-header">Add Product</h4>
+        <div class="card-body">
+            <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                <div class="mb-3">
+                  <mat-form-field class="w-100">
+                    <input matInput [placeholder]="'productManagement.title' | translate" class="form-control" formControlName="title" [ngClass]="{ 'is-invalid': submitted && f.title.errors }" />
+                  </mat-form-field>
+                    <div *ngIf="submitted && f.title.errors" class="invalid-feedback">
+                        <div *ngIf="f.title.errors.required">title is required</div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                  <mat-form-field class="w-100">
+                    <input type="text" matInput [placeholder]="'productManagement.description' | translate" class="form-control" formControlName="description" [ngClass]="{ 'is-invalid': submitted && f.description.errors }"/>
+                  </mat-form-field>
+                    <div *ngIf="submitted && f.description.errors" class="invalid-feedback">
+                        <div *ngIf="f.description.errors.required">description is required</div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <mat-form-field class="w-100">
+                      <input type="number" matInput [placeholder]="'productManagement.price' | translate" class="form-control" formControlName="price" [ngClass]="{ 'is-invalid': submitted && f.price.errors }"/>
+                    </mat-form-field>
+                      <div *ngIf="submitted && f.price.errors" class="invalid-feedback">
+                          <div *ngIf="f.price.errors.required">price is required</div>
+                      </div>
+                  </div>
+                  <div class="mb-3">
+                    <mat-form-field class="w-100">
+                      <input type="text" matInput [placeholder]="'productManagement.category' | translate" class="form-control" formControlName="category" [ngClass]="{ 'is-invalid': submitted && f.category.errors }"/>
+                    </mat-form-field>
+                      <div *ngIf="submitted && f.category.errors" class="invalid-feedback">
+                          <div *ngIf="f.category.errors.required">category is required</div>
+                      </div>
+                  </div>
+                <div>
+
+                    <button [disabled]="loading" class="w-100 btn btn-primary">
+                      <span  *ngIf="loading" ></span>
+                      Edit
+                  </button>
+
+                </div>
+            </form>
+        </div>
+    </div>
+  </div>

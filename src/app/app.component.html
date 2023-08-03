@@ -1,14 +1,16 @@
-<mat-toolbar *ngIf="user">
+<mat-toolbar>
 
   <a class="nav-item nav-link" routerLink="/">Store</a>
 
   <span class="example-spacer"></span>
-  <button mat-icon-button class="example-icon" aria-label="logout" (click)="logout()">
+  <button  *ngIf="user" mat-icon-button class="example-icon" aria-label="logout" (click)="logout()">
     <mat-icon>logout</mat-icon>
   </button>
-</mat-toolbar>
 
+  <button (click)="useLanguage('ar')">ar</button>
+<button (click)="useLanguage('en')">en</button>
+</mat-toolbar>
 <!-- main app container -->
-<div class="container">
+<div [dir]= "appLanguage == 'ar' ? 'rtl' : 'ltr'" class="container">
   <router-outlet></router-outlet>
 </div>

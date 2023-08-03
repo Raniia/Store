@@ -1,12 +1,18 @@
 {
-  "landingPage": {
-      "slogan": "Big or small, we move together",
-      "login": "Login",
-      "signUp": "sign up"
+  "login": {
+      "title": "Login",
+      "usernameRequired": "Username is required",
+      "passwordRequired": "Password is required",
+      "placeholderUsername": "Username",
+      "placeholderPassword": "Password"
   },
-  "loginPage": {
-      "slogan": "Big or small, we move together",
-      "login": "Login",
-      "signUp": "sign up"
+  "productManagement": {
+    "id": "ID",
+    "title": "Title",
+    "category": "Category",
+    "price": "Price",
+    "description": "Description",
+    "edit": "Edit",
+    "delete": "Delete"
   }
 }
